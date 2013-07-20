@@ -1,2 +1,3 @@
 DG-framework/.metadata/*
-DG-framework/.metadata/.*
+DG-framework/.metadata/.log
+DG-framework/.metadata/.plugins/*
