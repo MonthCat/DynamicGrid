@@ -2,6 +2,7 @@ DynamicGrid
 ===========
 
 DynamicGrid System
+
 Directory Structure
 |-Framework home
   |-DG-framework
@@ -10,7 +11,7 @@ Directory Structure
     |- DGBlog
     |- DGCMS
     |- DGNews
-  
+    
 Tools:
 	Maven
 	eclipse
@@ -20,4 +21,5 @@ Tools:
 	Spring
 	Spring MVC
 	ExtJS
-author:robin xie 
+	
+author:robin xie
