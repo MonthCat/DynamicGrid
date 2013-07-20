@@ -1,0 +1,48 @@
+
+!ENTRY org.eclipse.ui.ide 4 4 2013-07-20 22:59:33.144
+!MESSAGE Problems occurred refreshing the selected resources.
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2013-07-20 22:59:33.144
+!MESSAGE The project description file (.project) for 'DGAdmin' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2013-07-20 22:59:33.356
+!MESSAGE Unable to remove com/monthcat/dgadmin/0.0.1-SNAPSHOT/dgadmin-0.0.1-SNAPSHOT.pom
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2013-07-20 22:59:33.514
+!MESSAGE Can't save classpath container state for DGAdmin
+
+!ENTRY org.eclipse.core.jobs 4 2 2013-07-20 22:59:34.107
+!MESSAGE An internal error occurred during: "JBoss Tools Model Update".
+!STACK 0
+org.eclipse.core.runtime.AssertionFailedException: null argument:The dialog should be created in UI thread
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:85)
+	at org.eclipse.jface.dialogs.IconAndMessageDialog.getSWTImage(IconAndMessageDialog.java:282)
+	at org.eclipse.jface.dialogs.IconAndMessageDialog.getQuestionImage(IconAndMessageDialog.java:260)
+	at org.eclipse.jface.dialogs.MessageDialog.<init>(MessageDialog.java:189)
+	at org.jboss.tools.common.model.ui.wizards.one.ServiceDialogImpl.showDialog(ServiceDialogImpl.java:62)
+	at org.jboss.tools.common.model.filesystems.impl.FolderImpl.question(FolderImpl.java:708)
+	at org.jboss.tools.common.model.filesystems.impl.FolderImpl.updateRemove(FolderImpl.java:662)
+	at org.jboss.tools.common.model.filesystems.impl.FolderImpl.update(FolderImpl.java:354)
+	at org.jboss.tools.common.model.filesystems.impl.FileSystemFolderLoader.update(FileSystemFolderLoader.java:28)
+	at org.jboss.tools.common.model.filesystems.impl.FileSystemsLoader.update(FileSystemsLoader.java:66)
+	at org.jboss.tools.common.model.filesystems.impl.FileSystemsImpl.doUpdate(FileSystemsImpl.java:280)
+	at org.jboss.tools.common.model.filesystems.impl.FileSystemsImpl.access$4(FileSystemsImpl.java:274)
+	at org.jboss.tools.common.model.filesystems.impl.FileSystemsImpl$UpdateRunnable.run(FileSystemsImpl.java:267)
+	at org.jboss.tools.common.model.XJob.runInWorkspace(XJob.java:160)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.core.resources 4 566 2013-07-20 23:04:34.377
+!MESSAGE Could not save master table to file 'D:\gitHome\DynamicGrid\DG-framework\.metadata\.plugins\org.eclipse.core.resources\.safetable\org.eclipse.core.resources'.
+!STACK 0
+java.io.FileNotFoundException: D:\gitHome\DynamicGrid\DG-framework\.metadata\.plugins\org.eclipse.core.resources\.safetable\org.eclipse.core.resources (系统找不到指定的路径。)
+	at java.io.FileOutputStream.openAppend(Native Method)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:177)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:102)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:45)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:41)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1226)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1219)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1196)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1108)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
