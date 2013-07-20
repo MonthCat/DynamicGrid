@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="DGReport"
+  id="myeclipse.1374335013398"
+  context-root="/dynamicgrid.report"
+  j2ee-spec="6.0"
+  archive="DGReport.war">
+  <attributes>
+    <attribute name="webrootdir" value="src/main/webapp" />
+  </attributes>
+</project-module>
+
