@@ -38,22 +38,22 @@ public class UserServiceTest {
 	public void testAddUser() {
 		User user = new User("nima", "bde");
 		userService.addUser(user);
-		assertNotEquals(0, user.getId());
+		assertNotEquals(0, user.getUser_id());
 	}
 
 	@Test
 	public void testUpdateUser() {
-		User user = new User(2, "ad", "hj", 0, "fefe");
+		User user = new User(1, "admin", "admin","admin@admin.com", "user admin", 1);
 		userService.updateUser(user);
-		assertEquals("fefe", userService.findUserById(2).getWebkey());
+		assertEquals("admin@admin.com", userService.findUserById(1).getUser_mail());
 	}
 
 	@Test
 	public void testDeleteUser() {
-		User user = new User(222, "ad", "hj", 0, null);
+		User user = new User(1, "admin", "admin","admin@admin.com", "user admin", 1);
 		userService.deleteUser(user);
 		try {
-			User newUser = userService.findUserById(222);
+			User newUser = userService.findUserById(1);
 			assertEquals(null, newUser);
 		} catch (Exception e) {
 			assertEquals(org.hibernate.ObjectNotFoundException.class,
@@ -63,8 +63,8 @@ public class UserServiceTest {
 
 	@Test
 	public void testFindUserById() {
-		User u = userService.findUserById(0);
-		assertEquals(0, u.getId());
+		User u = userService.findUserById(1);
+		assertEquals(1, u.getUser_id());
 	}
 
 	@Test
@@ -76,15 +76,15 @@ public class UserServiceTest {
 
 	@Test
 	public void testFindUserByProperty() {
-		Collection<User> u = userService.findUserByProperty("username", "ad");
+		Collection<User> u = userService.findUserByProperty("user_name", "monthcat");
 		assertNotEquals(null, u);
 		assertNotEquals(0, u.size());
 	}
 
 	@Test
 	public void testFindByPropertyAndLimit() {
-		Collection<User> u = userService.findByPropertyAndLimit("username",
-				"ad", 0, 10);
+		Collection<User> u = userService.findByPropertyAndLimit("user_name",
+				"monthcat", 0, 10);
 		assertNotEquals(null, u);
 		assertNotEquals(0, u.size());
 	}

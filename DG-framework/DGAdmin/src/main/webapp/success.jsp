@@ -11,7 +11,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <title>Insert title here</title>
 </head>
 <body>
-${user.username }
+${user.user_name }
 <br>
 ${msg }
 </body>

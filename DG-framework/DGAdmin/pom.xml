@@ -104,6 +104,22 @@
 			<artifactId>tomcat-juli</artifactId>
 			<version>${tomcat.jdbc.tool.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-core</artifactId>
+			<version>${org.springframework.security.version}</version>
+		</dependency>
+		<dependency>
+	        <groupId>org.springframework.security</groupId>
+	        <artifactId>spring-security-web</artifactId>
+	        <version>${org.springframework.security.version}</version>
+	    </dependency>
+	    <dependency>
+	        <groupId>org.springframework.security</groupId>
+	        <artifactId>spring-security-config</artifactId>
+	        <version>${org.springframework.security.version}</version>
+	    </dependency>
+		
 	</dependencies>
 	<build>
 		<finalName>springtest</finalName>
@@ -175,5 +191,6 @@
 		<com.alibaba.fastjson.version>1.1.29</com.alibaba.fastjson.version>
 		<finalName>DGAdmin</finalName>
 		<tomcat.jdbc.tool.version>7.0.42</tomcat.jdbc.tool.version>
+		<org.springframework.security.version>3.1.4.RELEASE</org.springframework.security.version>
 	</properties>
 </project>

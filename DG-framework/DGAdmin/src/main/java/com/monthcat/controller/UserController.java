@@ -1,7 +1,5 @@
 package com.monthcat.controller;
 
-import java.util.UUID;
-
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,7 +12,6 @@ import com.monthcat.model.User;
 import com.monthcat.service.UserService;
 
 @Controller
-@RequestMapping("/user")
 public class UserController {
 	private static Logger logger = Logger.getLogger(UserController.class);
 	@Autowired
@@ -22,7 +19,7 @@ public class UserController {
 
 	@RequestMapping("/reg")
 	public String register(User user, Model model) {
-		return "index";
+		return "reg";
 	}
 
 	@RequestMapping("/update")
@@ -36,9 +33,8 @@ public class UserController {
 
 		try {
 
-			user.setId(UUID.randomUUID().toString().length());
 			userService.addUser(user);
-			logger.info("User " + user.getUsername() + " register success.");
+			logger.info("User " + user.getUser_name() + " register success.");
 			mav = new ModelAndView();
 			mav.setViewName("success");
 			mav.addObject("user", user);

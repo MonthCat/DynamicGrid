@@ -7,87 +7,93 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Entity(name="user")
-@Table(name = "test_user")
+@Entity(name = "user")
+@Table(name = "dg_user")
 public class User implements java.io.Serializable {
 
-	private int id;
-	private String username;
-	private String password;
-	private int cookie_time;
-	private String webkey;
+	private int user_id;
+	private String user_name;
+	private String user_password;
+	private String user_mail;
+	private String user_desc;
+	private int enable;
 
-	public User(){
-		
-	}
-	
-	public User(String username, String password) {
-		this.username = username;
-		this.password = password;
-	}
-
-	public User(int id, String username, String password, int cookie_time,
-			String webkey) {
+	public User() {
 		super();
-		this.id = id;
-		this.username = username;
-		this.password = password;
-		this.cookie_time = cookie_time;
-		this.webkey = webkey;
+		// TODO Auto-generated constructor stub
+	}
+
+	public User(int user_id, String user_name, String user_password,
+			String user_mail, String user_desc, int enable) {
+		super();
+		this.user_id = user_id;
+		this.user_name = user_name;
+		this.user_password = user_password;
+		this.user_mail = user_mail;
+		this.user_desc = user_desc;
+		this.enable = enable;
+	}
+
+	public User(String user_name, String user_password) {
+		super();
+		this.user_name = user_name;
+		this.user_password = user_password;
 	}
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name = "id", nullable = true, length = 11)
-	public int getId() {
-		return id;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "user_id", nullable = true, length = 11)
+	public int getUser_id() {
+		return user_id;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setUser_id(int user_id) {
+		this.user_id = user_id;
 	}
 
-	@Column(name = "username", nullable = false, length = 40)
-	public String getUsername() {
-		return username;
+	@Column(name = "user_name", nullable = false, length = 100)
+	public String getUser_name() {
+		return user_name;
 	}
 
-	public void setUsername(String username) {
-		this.username = username;
+	public void setUser_name(String user_name) {
+		this.user_name = user_name;
 	}
 
-	@Column(name = "password", nullable = false, length = 32)
-	public String getPassword() {
-		return password;
+	@Column(name = "user_password", nullable = false, length = 32)
+	public String getUser_password() {
+		return user_password;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
+	public void setUser_password(String user_password) {
+		this.user_password = user_password;
 	}
 
-	@Column(name = "cookie_time", nullable = true, length = 11)
-	public int getCookie_time() {
-		return cookie_time;
+	@Column(name = "user_mail", nullable = true, length = 100)
+	public String getUser_mail() {
+		return user_mail;
 	}
 
-	public void setCookie_time(int cookie_time) {
-		this.cookie_time = cookie_time;
+	public void setUser_mail(String user_mail) {
+		this.user_mail = user_mail;
 	}
 
-	@Column(name = "webkey", nullable = true, length = 50)
-	public String getWebkey() {
-		return webkey;
+	@Column(name = "user_desc", nullable = true, length = 200)
+	public String getUser_desc() {
+		return user_desc;
 	}
 
-	public void setWebkey(String webkey) {
-		this.webkey = webkey;
+	public void setUser_desc(String user_desc) {
+		this.user_desc = user_desc;
 	}
 
-	@Override
-	public String toString() {
-		return "User [id=" + id + ", username=" + username + ", password="
-				+ password + ", cookie_time=" + cookie_time + ", webkey="
-				+ webkey + "]";
+	@Column(name = "enable", nullable = true, length = 11)
+	public int getEnable() {
+		return enable;
 	}
-	
+
+	public void setEnable(int enable) {
+		this.enable = enable;
+	}
+
 }

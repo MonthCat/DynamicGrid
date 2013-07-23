@@ -3,7 +3,10 @@
   <display-name></display-name>
   <context-param>
     <param-name>contextConfigLocation</param-name>
-    <param-value>classpath:config/spring-config/spring.xml,classpath:config/spring-config/spring-hibernate.xml</param-value>
+    <param-value>classpath:config/spring-config/spring.xml,
+    classpath:config/spring-config/spring-hibernate.xml
+    classpath:config/spring-config/spring-security.xml
+    </param-value>
   </context-param>
   <listener>
     <listener-class>com.monthcat.listener.ReleaseResourceListener</listener-class>
@@ -41,7 +44,47 @@
   <session-config>
     <session-timeout>10</session-timeout>
   </session-config>
+  <!-- spring security过滤器 
+	-->
+	<filter>
+		<filter-name>springSecurityFilterChain</filter-name>
+		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>springSecurityFilterChain</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<!-- 监听session是否过期 -->
+	<listener>
+		<listener-class>org.springframework.security.web.session.HttpSessionEventPublisher</listener-class>
+	</listener>
+  <error-page>
+  	<error-code>404</error-code>
+  	<location>/error/404.jsp</location>
+  </error-page>
+  <error-page>
+  	<error-code>500</error-code>
+  	<location>/error/500.jsp</location>
+  </error-page>
+   <!-- 设备异常处理惩罚 -->
+
+    <error-page>
+
+       <exception-type>javax.servle.ServletException</exception-type>
+
+       <location>/error/500.jsp</location>
+
+    </error-page>
+
+    <error-page>
+
+       <exception-type>java.lang.NullPointerException</exception-type>
+
+       <location>/error/500.jsp</location>
+
+    </error-page>
+  
   <welcome-file-list>
-    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>reg.html</welcome-file>
   </welcome-file-list>
 </web-app>

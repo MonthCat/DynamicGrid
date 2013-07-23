@@ -1,0 +1,1 @@
+mvn clean compile package install -DskipTests tomcat7:redeploy
